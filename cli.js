@@ -10,7 +10,8 @@ program
     .action(function (cmd) {
         const filename = process.argv.slice(2)[1];
         const filePath = path.resolve(process.cwd(), filename);
-        const protestPath = path.join(__dirname, "./");
+        const protestPath = path.join(__dirname, "./");        
+        const modulesPath = path.join(__dirname, "../");
         const envconfig = require(filePath).envconfig;
         if (cmd) {
             switch (cmd) {
@@ -22,7 +23,7 @@ program
                     console.log(moduleDetails.version);
                     break;
                 case "test":
-                    test(protestPath,filePath, envconfig);
+                    test(protestPath, modulesPath, envconfig);
                     break;
             }
         } else {

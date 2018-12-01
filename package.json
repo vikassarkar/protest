@@ -1,6 +1,6 @@
 {
   "name": "prottest",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "One package setup for e2e testing automation",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "remove:report": "rimraf ./__report__/",
     "mail:report": "node ./src/config/env.mail.js",
     "test": "protractor ./src/config/pro.config.js"
-  },  
+  },
   "keywords": [
     "cli",
     "shell",
@@ -19,16 +19,20 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/vikassarkar/protest"
-  }, 
+  },
   "engines": {
     "node": ">=8.9.0"
   },
   "author": "vikas sarkar",
   "license": "MIT",
   "dependencies": {
+    "@types/jasmine": "^2.8.8",
+    "@types/node": "^10.7.1",
     "bluebird": "^3.5.2",
     "chalk": "^2.4.1",
     "commander": "^2.17.1",
+    "configstore": "^4.0.0",
+    "core-js": "^2.5.7",
     "easy-zip": "0.0.4",
     "ffmpeg-binaries": "^4.0.0",
     "jasmine": "^3.1.0",
@@ -41,16 +45,10 @@
     "protractor-video-reporter": "^0.3.0",
     "rimraf": "^2.6.2",
     "shelljs": "^0.8.2",
-    "typescript": "^2.9.2",
-    "configstore": "^4.0.0",
-    "unescape": "^1.0.1"
-  },
-  "devDependencies": {
-    "@types/jasmine": "^2.8.8",
-    "@types/node": "^10.7.1",
     "ts-node": "^7.0.1",
-    "core-js": "^2.5.7",
-    "tslib": "^1.9.3"
+    "tslib": "^1.9.3",
+    "typescript": "^2.9.2",
+    "unescape": "^1.0.1"
   },
   "bin": {
     "prottest": "./cli.js"

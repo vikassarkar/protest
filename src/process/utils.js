@@ -5,10 +5,10 @@ const reporter = require("../config/pro.reporter");
 const reportsPath = require("../config/reporter.config");
 
 const utils = {
-    setWebDriver: function (protestPath, filePath) {
+    setWebDriver: function (protestPath, modulesPath) {
         const promise = new Promise(function (resolve, reject) {
             const refSrcDir = protestPath + "/drivers/manager"
-            const webDriverPath = filePath + "/node_modules/protractor/node_modules/webdriver-manager"
+            const webDriverPath = modulesPath + "/node_modules/protractor/node_modules/webdriver-manager"
             if (fs.existsSync(webDriverPath)) {
                 if (!fs.existsSync(webDriverPath + "/selenium")) {
                     fse.ensureDirSync(webDriverPath + "/selenium");
