@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es2016",
+      "dom"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "removeComments": false,
+    "declaration": false,
+    "forceConsistentCasingInFileNames": false,
+    "noUnusedLocals": true,
+    "pretty": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "types": [
+      "node",
+      "jasmine"
+    ],
+    "outDir": "./dist",
+    "rootDir": "./src"
+  }
+}
