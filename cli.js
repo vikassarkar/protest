@@ -22,7 +22,7 @@ program
                     console.log(moduleDetails.version);
                     break;
                 case "test":
-                    test(protestPath, envconfig);
+                    test(protestPath,filePath, envconfig);
                     break;
             }
         } else {
