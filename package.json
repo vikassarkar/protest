@@ -1,8 +1,30 @@
 {
   "name": "protest",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "One package setup for e2e testing automation",
   "main": "index.js",
+  "scripts": {
+    "remove:node": "rimraf ./node_modules",
+    "remove:report": "rimraf ./__report__/",
+    "mail:report": "node ./src/config/env.mail.js",
+    "test": "protractor ./src/config/pro.config.js"
+  },  
+  "keywords": [
+    "cli",
+    "shell",
+    "protractor",
+    "webdriver-manager",
+    "selenium"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vikassarkar/protest"
+  }, 
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "author": "vikas sarkar",
+  "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.2",
     "chalk": "^2.4.1",
@@ -22,39 +44,15 @@
     "shelljs": "^0.8.2",
     "ts-node": "^7.0.1",
     "typescript": "^2.9.2",
+    "configstore": "^4.0.0",
     "unescape": "^1.0.1"
   },
   "devDependencies": {
     "@types/jasmine": "^2.8.8",
     "@types/node": "^10.7.1",
-    "configstore": "^4.0.0",
     "tslib": "^1.9.3"
   },
-  "scripts": {
-    "i:global": "npm i -g protractor && npm i -g rimraf && npm i -g webdriver-manager",
-    "update:driver": "webdriver-manager update --ignore_ssl && webdriver-manager update --ie --ignore_ssl",
-    "e2e:setup": "npm run i:global && npm run update:driver",
-    "update:proxy-driver": "webdriver-manager update  --ignore_ssl --proxy http://genproxy.amdocs.com:8080 && webdriver-manager update --ie --ignore_ssl --proxy=http://genproxy.amdocs.com:8080",
-    "proxy-webdriver": "webdriver-manager start --ignore_ssl --proxy http://genproxy.amdocs.com:8080",
-    "e2e:proxy-setup": "npm run i:global && npm run update:proxy-driver",
-    "webdriver": "webdriver-manager start --ignore_ssl",
-    "start:driver": "npm run update:driver && npm run webdriver",
-    "start:proxy-driver": "npm run update:proxy-driver && npm run proxy-webdriver",
-    "remove:node": "rimraf ./node_modules",
-    "remove:report": "rimraf ./__report__/",
-    "mail:report": "node ./src/config/env.mail.js",
-    "test": "protractor ./src/config/pro.config.js"
-  },
-  "author": "vikas sarkar",
-  "license": "ISC",
   "bin": {
     "protest": "./cli.js"
-  },
-  "keywords": [
-    "cli",
-    "shell",
-    "protractor",
-    "webdriver-manager",
-    "selenium"
-  ]
+  }
 }
