@@ -23,7 +23,8 @@ const envConfig = {
     isTsCases:storeState.isTsCases || false,
     isEs6Cases:storeState.isEs6Cases || false,
     isAngular: storeState.isAngular || false,
-    browserMaximize:storeState.browserMaximize || false
+    browserMaximize:storeState.browserMaximize || false,    
+    jsonReport: storeState.jsonReport || "../../reports.json"
 };
 
 module.exports = envConfig;

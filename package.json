@@ -1,6 +1,6 @@
 {
   "name": "prottest",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "One package setup for e2e testing automation",
   "main": "index.js",
   "scripts": {

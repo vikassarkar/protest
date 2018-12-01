@@ -11,7 +11,7 @@ program
         const filename = process.argv.slice(2)[1];
         const filePath = path.resolve(process.cwd(), filename);
         const protestPath = path.join(__dirname, "./");        
-        const modulesPath = path.join(__dirname, "../");
+        const modulesPath = path.join(__dirname, "../../");
         const envconfig = require(filePath).envconfig;
         if (cmd) {
             switch (cmd) {
