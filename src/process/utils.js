@@ -7,7 +7,7 @@ const reportsPath = require("../config/reporter.config");
 const utils = {
     setWebDriver: function (protestPath) {
         const promise = new Promise(function (resolve, reject) {
-            const refSrcDir = protestPath + "/drivers/webdriver-manager"
+            const refSrcDir = protestPath + "/drivers/manager"
             const webDriverPath = protestPath + "/node_modules/protractor/node_modules/webdriver-manager"
             if (fs.existsSync(webDriverPath)) {
                 if (!fs.existsSync(webDriverPath + "/selenium")) {
