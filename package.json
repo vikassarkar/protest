@@ -18,7 +18,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/vikassarkar/protest"
+    "url": "https://github.com/vikassarkar/prottest"
   },
   "engines": {
     "node": ">=8.9.0"
