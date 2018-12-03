@@ -99,7 +99,7 @@ const emailFormat = function () {
                                     <tr>
                                         <td align="center" valign="top" style="font-size: 11px;color: #ffffff;padding: 1.5rem;max-width: 600px;font-style:italic;width: 100%;">
                                             Need Assistance? Just write to us at donotreplyme2017@gmail.com or support_noreply@zoho.com for any query you may have. Available between 10:00am and 19:00pm.<br/>
-                                            All e2e (jasmine test cases, reporting, zipping and mailing) functionality is added by vikas.sarkar@amdocs.com 👮
+                                            All e2e (jasmine test cases, reporting, zipping and mailing) functionality is added by vikas.sarkar 👮
                                         </td>
                                     </tr>
                                 </tbody>
