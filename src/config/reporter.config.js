@@ -1,6 +1,6 @@
 
-const store = require("../process/store");
 const path = require("path");
+const store = require("../process/store");
 const storeState = store.getStore();
 
 const reportsPath = {

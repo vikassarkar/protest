@@ -1,17 +1,17 @@
 
 const envConfig = require("./env.Config");
 const fs = require("fs");
-const path = require("path");
 const fse = require("fs-extra");
 const jsdom = require("jsdom");
 const EasyZip = require('easy-zip').EasyZip;
 const decode = require('unescape');
+const reportsPath = require("./reporter.config");
 const zip = new EasyZip();
 const { JSDOM } = jsdom;
 
 const createZipReport = function () {
     console.log(":::::::: 👥 ZIPPING REPORT EXECUTION STARTED 👥 :::::::::::::");
-    const tempReportPath = path.join(__dirname, "../../../__report__/report/");
+    const tempReportPath = reportsPath.reportsBasePath + "/report/";
     const zippingReportPathArray = envConfig.archiveReporter.split("\\");
     const reporterName = zippingReportPathArray[zippingReportPathArray.length - 1];
     

@@ -3,14 +3,9 @@ const path = require("path");
 const shell = require("shelljs");
 const chalk = require("chalk");
 const utils = require("./utils");
-const store = require("./store");
 
-const test = (protestPath, modulesPath, envconfig) => {
-    store.setStore(envconfig);
+const test = (protestPath, modulesPath) => {
     console.log("Starting test cases");
-    const projPath = path.resolve(process.cwd());
-    console.log(chalk.bold.green("current path ::-" + projPath));
-    console.log(chalk.bold.green("protest path ::-" + protestPath));
     utils.setWebDriver(protestPath, modulesPath).then((resp) => {
         console.log(chalk.bold.green(resp));
         shell.exec("cd " + protestPath + " && npm test", { silent: false, async: true }, (code, output, error) => {

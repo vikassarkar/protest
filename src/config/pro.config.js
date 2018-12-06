@@ -1,11 +1,23 @@
 
+const fs = require("fs");
+const fse = require("fs-extra");
 const reportsPath = require("./reporter.config");
 const createZipReport = require("./pro.zipper");
-const utils = require("../process/utils");
 const envConfig = require("./env.config");
 const mailer = require("./pro.mailer");
 
-utils.createReportsFolder();
+const createReportsFolder = function(){
+    const reportDir = [reportsPath.mgmtReportPath, reportsPath.devReportPath, reportsPath.videoReportPath]
+    if (fs.existsSync(reportsPath.reportsBasePath)) {
+        fse.removeSync(reportsPath.reportsBasePath);
+    }
+    for (let dir of reportDir) {
+        if (!fs.existsSync(dir)) {
+            fse.ensureDirSync(dir);
+        }
+    }
+}();
+
 exports.config = {
     allScriptsTimeout: envConfig.allScriptsTimeout,
     framework: envConfig.framework,

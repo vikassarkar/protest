@@ -1,5 +1,5 @@
 const Configstore = require('configstore');
-const storeConfig = new Configstore("protestConfig");
+const storeConfig = new Configstore("prottestConfig");
 
 const store = {
     setStore: (config) => {

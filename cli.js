@@ -3,6 +3,7 @@
 const path = require("path");
 const moduleDetails = require("./package.json");
 const program = require('commander'); // for reading command line
+const store = require("./src/process/store");
 const test = require('./src/process/test');
 program
     .arguments('<cmd>')
@@ -12,7 +13,8 @@ program
         const filePath = path.resolve(process.cwd(), filename);
         const protestPath = path.join(__dirname, "./");        
         const modulesPath = path.join(__dirname, "../../");
-        const envconfig = require(filePath).envconfig;
+        const envconfig = require(filePath).envconfig;        
+        store.setStore(envconfig);
         if (cmd) {
             switch (cmd) {
                 case "v":
@@ -23,7 +25,7 @@ program
                     console.log(moduleDetails.version);
                     break;
                 case "test":
-                    test(protestPath, modulesPath, envconfig);
+                    test(protestPath, modulesPath);
                     break;
             }
         } else {

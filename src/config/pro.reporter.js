@@ -1,6 +1,6 @@
 
-const reportsPath = require("./reporter.config");
 const path = require("path");
+const reportsPath = require("./reporter.config");
 
 /**video reporter plugin setup */
 const VideoReporter = require("protractor-video-reporter");
@@ -8,6 +8,7 @@ VideoReporter.prototype.jasmineStarted = function () {
     let self = this;
     if (self.options.singleVideo) {
         const videoPath = path.join(self.options.baseDirectory, "protractor-specs.avi");
+        console.log(videoPath)
         self._startScreencast(videoPath);
         if (self.options.createSubtitles) {
             self._subtitles = [];
@@ -48,8 +49,11 @@ const specReport = new SpecReporter({
     displaySpecDuration: true
 });
 
-module.exports = {
-    specReport:specReport,
-    sanityReport:sanityReport,
-    videoReport:videoReport
-}
+const reporter = {
+    reportsPath:reportsPath,
+    videoReport: videoReport,
+    sanityReport: sanityReport,
+    specReport: specReport
+};
+
+module.exports = reporter;

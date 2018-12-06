@@ -1,6 +1,6 @@
 
-const envConfig = require('./env.config');
 const nodemailer = require('nodemailer');
+const envConfig = require('./env.config');
 
 /**email template for mailing */
 const emailFormat = function () {
@@ -138,6 +138,7 @@ const mailZippedReport = function () {
         const attachmentPath = envConfig.archiveReportPath + "\\" + attachFile;
         console.log(":::::::: 👥 MAILING SERVICE EXECUTION STARTED 👥 :::::::::::::");
         console.log("::::::::::🐴 Please wait mailing is in progress 🐴:::::::::::::::");
+        console.log(attachmentPath);
 
         transporter.sendMail({
             from: envConfig.emailConfig.mailFrom,
