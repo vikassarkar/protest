@@ -24,6 +24,9 @@ exports.config = {
     directConnect: true, //lets Protractor connect directly to the browser drivers only for chrome and firefox
     baseUrl: envConfig.baseUrl,
     specs: envConfig.testFiles,
+    chromeDriver: '../../drivers/manager/selenium/chromedriver_2.43.exe',
+    geckoDriver:'../../drivers/manager/selenium/geckodriver-v0.23.0.exe',
+    firefoxPath: "C:/Program Files/Mozilla Firefox/firefox.exe",
     multiCapabilities: [
         {
             "browserName": "chrome",
@@ -37,8 +40,7 @@ exports.config = {
         //     "moz:firefoxOptions": {
         //         "args": envConfig.mozillaState
         //     },
-        //     "version": "ANY",
-        //     "firefoxPath": "C:/Program Files (x86)/Mozilla Firefox/firefox.exe"
+        //     "version": "ANY"
         // }
     ],
     // capabilities: {
