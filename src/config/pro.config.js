@@ -6,7 +6,7 @@ const createZipReport = require("./pro.zipper");
 const envConfig = require("./env.config");
 const mailer = require("./pro.mailer");
 
-const createReportsFolder = function(){
+const createReportsFolder = function () {
     const reportDir = [reportsPath.mgmtReportPath, reportsPath.devReportPath, reportsPath.videoReportPath]
     if (fs.existsSync(reportsPath.reportsBasePath)) {
         fse.removeSync(reportsPath.reportsBasePath);
@@ -25,7 +25,7 @@ exports.config = {
     baseUrl: envConfig.baseUrl,
     specs: envConfig.testFiles,
     chromeDriver: '../../drivers/manager/selenium/chromedriver_2.43.exe',
-    geckoDriver:'../../drivers/manager/selenium/geckodriver-v0.23.0.exe',
+    geckoDriver: '../../drivers/manager/selenium/geckodriver-v0.23.0.exe',
     firefoxPath: "C:/Program Files/Mozilla Firefox/firefox.exe",
     multiCapabilities: [
         {
@@ -36,11 +36,13 @@ exports.config = {
             }
         },
         // {
-        //     "browserName": "firefox",
+        //     "browserName": 'firefox',
+        //     "version": "ANY",
         //     "moz:firefoxOptions": {
-        //         "args": envConfig.mozillaState
-        //     },
-        //     "version": "ANY"
+        //         "args": [
+        //             '-headless'
+        //         ]
+        //     }
         // }
     ],
     // capabilities: {
